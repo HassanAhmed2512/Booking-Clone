@@ -105,7 +105,7 @@ Axios is used in the frontend to make API calls to the backend server. Ensure th
 ## Encrypting Passwords
 User passwords are encrypted using the bcrypt library before storing them in the database. This ensures that user data remains secure even in the event of a data breach.
 
-### Contributing
+## Contributing
 We welcome contributions to improve the project. If you find any issues or want to add new features, please feel free to create pull requests.
 
 
