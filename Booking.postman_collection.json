@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "c20d70a1-b699-44fa-984f-93f4963a3b31",
+		"name": "Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE HOTEL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Secluded Forest Cabins\",\r\n  \"type\": \"cabins\",\r\n  \"city\": \"austin\",\r\n  \"address\": \"789 Mountain Road\",\r\n  \"distance\": \"2 miles\",\r\n  \"photos\": [\"photo22.jpg\", \"photo23.jpg\", \"photo24.jpg\"],\r\n  \"title\": \"Escape to Tranquil Forest Cabins in Whistler\",\r\n  \"desc\": \"Experience the peace and serenity of nature with our secluded forest cabins in Whistler. Surrounded by breathtaking landscapes, our cabins offer a cozy and intimate retreat for relaxation, outdoor activities, and reconnecting with nature.\",\r\n  \"rooms\": [],\r\n  \"cheapestPrice\": 250,\r\n  \"featured\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE HOTEL",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"hotels\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/64a6e59db5ff67d0f17495d6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						"64a6e59db5ff67d0f17495d6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE HOTEL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/649c68c9181cc484fdc71dac",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						"649c68c9181cc484fdc71dac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET HOTEL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"room Title\",\r\n  \"desc\": \"room Description\",\r\n  \"price\": 100,\r\n  \"maxPeople\":3,\r\n  \"roomNumbers\":[{\"number\":101},{\"number\":102}]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/find/64a6e4c43be4634fcefdbaf4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						"find",
+						"64a6e4c43be4634fcefdbaf4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL HOTEL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels?city=giza&min=100&max=1000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "giza"
+						},
+						{
+							"key": "limit",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "min",
+							"value": "100"
+						},
+						{
+							"key": "max",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL HOTEL BY CITY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/countByCity?cities=giza,cairo,austin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						"countByCity"
+					],
+					"query": [
+						{
+							"key": "cities",
+							"value": "giza,cairo,austin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL HOTEL Room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/room/64a6e4c43be4634fcefdbaf4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						"room",
+						"64a6e4c43be4634fcefdbaf4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL HOTEL BY Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/hotels/countByType",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"hotels",
+						"countByType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"joh252c22n_doe\",\r\n  \"email\": \"joh2n.23c2d5oe@example.com\",\r\n  \"password\": \"passwo22rd5123\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"joh25222n_doe\",\r\n  \"password\": \"passwo22rd5123\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE ROOM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"room1 Title\",\r\n  \"desc\": \"room2 Description\",\r\n  \"price\": 1030,\r\n  \"maxPeople\":34,\r\n  \"roomNumbers\":[{\"number\":301},{\"number\":402}]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/rooms/64a6e4c43be4634fcefdbaf4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"rooms",
+						"64a6e4c43be4634fcefdbaf4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Room Availability",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"room Title\",\r\n  \"desc\": \"room Description\",\r\n  \"price\": 100,\r\n  \"maxPeople\":3,\r\n  \"roomNumbers\":[{\"number\":101},{\"number\":102}]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/rooms/availability/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"rooms",
+						"availability",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ROOM",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/rooms/649f4dae36dbf23b6454f384/649c6e417f43c88f6f211883",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"rooms",
+						"649f4dae36dbf23b6454f384",
+						"649c6e417f43c88f6f211883"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8800/api/rooms/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8800",
+					"path": [
+						"api",
+						"rooms",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
