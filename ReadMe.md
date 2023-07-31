@@ -66,3 +66,52 @@ Ensure you have the following prerequisites installed:
    ```bash
    git clone <repository_url>
    cd booking-com-clone
+   
+Install the required dependencies for both frontend and backend:
+
+# Install frontend dependencies
+cd frontend
+npm install
+
+# Install backend dependencies
+cd ../backend
+npm install
+
+## Setting Up the Backend
+
+### Database Configuration
+Make sure you have MongoDB installed and running on your system.
+
+Create a .env file in the backend directory with the following content:
+MONGODB_URI=<your_mongodb_connection_string>
+
+### JWT Strategy for Authentication
+
+The backend uses JSON Web Tokens (JWT) for user authentication. When a user logs in or signs up, the server issues a JWT token that the user includes in subsequent requests to authenticate themselves.
+
+- To use JWT for authentication, create a .env file in the backend directory with the following content:
+ `JWT_SECRET=<your_jwt_secret_key>` .
+ - The JWT_SECRET is a secret key used to sign the tokens. Make sure to replace <your_jwt_secret_key> with a strong and secure random string.
+
+## Setting Up the Frontend
+
+### React Context API
+
+The frontend uses the React Context API for state management. The context provides a way to pass data through the component tree without having to pass props manually at every level.
+
+
+### Axios for API Calls
+Axios is used in the frontend to make API calls to the backend server. Ensure that the backend server is running and accessible from the frontend.
+
+## Encrypting Passwords
+User passwords are encrypted using the bcrypt library before storing them in the database. This ensures that user data remains secure even in the event of a data breach.
+
+### Contributing
+We welcome contributions to improve the project. If you find any issues or want to add new features, please feel free to create pull requests.
+
+
+
+
+
+
+
