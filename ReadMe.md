@@ -1,4 +1,4 @@
-# Booking.com Clone Project Documentation
+# Booking.com (Clone)
 
 This documentation provides an overview of the Booking.com Clone project, developed using MERN stack (MongoDB, Express, React, Node.js) and various other technologies. The project serves as a replica of the popular booking website "booking.com," allowing users to search for accommodations, view details, and make bookings.
 
