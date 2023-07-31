@@ -18,7 +18,6 @@ This documentation provides an overview of the Booking.com Clone project, develo
   - :globe_with_meridians: [Axios for API Calls](#axios-for-api-calls)
 - :lock: [Encrypting Passwords](#encrypting-passwords)
 - :busts_in_silhouette: [Contributing](#contributing)
-- :page_with_curl: [License](#license)
 
 ## Project Overview
 
